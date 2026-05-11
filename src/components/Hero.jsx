@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="hero">
 
       <motion.img
-        src="public/logo.png"
+        src="/logo.png"
         alt="Prime Media Logo"
         className="hero-logo"
         initial={{ opacity: 0, scale: 0.5 }}
