@@ -5,9 +5,13 @@ export default function Navbar() {
     <nav className="navbar">
       <h1>Prime Media</h1>
 
-      <a href={whatsappLink} target="_blank">
-        <button>Contact</button>
-      </a>
+      <div className="nav-links">
+        <a href="#blog">Blog</a>
+
+        <a href={whatsappLink} target="_blank">
+          <button>Contact</button>
+        </a>
+      </div>
     </nav>
   );
 }
