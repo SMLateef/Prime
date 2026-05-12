@@ -1,40 +1,67 @@
 import { motion } from "framer-motion";
 
 export default function Services() {
-  const services = [
-    {
-      title: "Brand Deals",
-      desc: "We connect creators with brands.",
-    },
-    {
-      title: "Campaign Management",
-      desc: "We manage collaborations smoothly.",
-    },
-    {
-      title: "Growth Support",
-      desc: "Helping creators grow faster online.",
-    },
+
+  const creatorServices = [
+    "Brand Sponsorships",
+    "Paid Collaborations",
+    "Growth Strategy",
+    "Campaign Management",
+  ];
+
+  const brandServices = [
+    "Influencer Marketing",
+    "Creator Discovery",
+    "Campaign Execution",
+    "UGC Content",
   ];
 
   return (
-    <section className="services">
-      <h2>What We Do</h2>
+    <section className="services" id="services">
 
-      <div className="services-grid">
-        {services.map((service, index) => (
-          <motion.div
-            className="service-box"
-            key={index}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <h3>{service.title}</h3>
-            <p>{service.desc}</p>
-          </motion.div>
-        ))}
+      <motion.h2
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+      >
+        Our Services
+      </motion.h2>
+
+      <div className="services-wrapper">
+
+        {/* Creator Side */}
+        <motion.div
+          className="service-column"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3>For Creators</h3>
+
+          {creatorServices.map((service, index) => (
+            <div className="service-item" key={index}>
+              {service}
+            </div>
+          ))}
+        </motion.div>
+
+        {/* Brand Side */}
+        <motion.div
+          className="service-column"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h3>For Brands</h3>
+
+          {brandServices.map((service, index) => (
+            <div className="service-item" key={index}>
+              {service}
+            </div>
+          ))}
+        </motion.div>
+
       </div>
+
     </section>
   );
 }
